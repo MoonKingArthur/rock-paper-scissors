@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>Rock Paper Scissors Game</title>
+    </head>
+    <body>
+        <h1>Let the games begin!</h1>
+        <script>
+            alert("Hello");
+            function computerPlay(){
+                //random integer 0 - 2
+                var num = Math.floor(Math.random() * 3);
+
+                if (num == 0){
+                    return "rock";
+                }
+                else if (num == 1){
+                    return "paper";
+                }
+                else if (num ==2){
+                    return "scissors";
+                }
+                return;
+            }
+            function humanPlay(){
+                let choice = prompt("Rock, paper, or scissors?");
+                return choice.toLowerCase();
+            }
+            function playRound(){
+                playerSelection = humanPlay();
+                computerSelection = computerPlay();
+                if (playerSelection == "rock"){
+                    if (computerSelection == "rock"){
+                        alert("The computer chose " + computerSelection + ". Tie!");
+                    }
+                    if (computerSelection == "paper"){
+                        alert("The computer chose " + computerSelection + ". You lose!");
+                    }
+                    if (computerSelection == "scissors"){
+                        alert("The computer chose " + computerSelection + ". You win!");
+                    }
+                }
+                if (playerSelection == "paper"){
+                    if (computerSelection == "rock"){
+                        alert("The computer chose " + computerSelection + ". You win!");
+                    }
+                    if (computerSelection == "paper"){
+                        alert("The computer chose " + computerSelection + ". Tie!");
+                    }
+                    if (computerSelection == "scissors"){
+                        alert("The computer chose " + computerSelection + ". You lose!");
+                    }
+                }
+                if (playerSelection == "scissors"){
+                    if (computerSelection == "rock"){
+                        alert("The computer chose " + computerSelection + ". You lose!");
+                    }
+                    if (computerSelection == "paper"){
+                        alert("The computer chose " + computerSelection + ". You win!");
+                    }
+                    if (computerSelection == "scissors"){
+                        alert("The computer chose " + computerSelection + ". Tie!");
+                    }
+                }
+            }
+
+            //keep playing rounds forever
+            let playAgain = true;
+            while (playAgain == true){
+                playRound();
+                let choice = prompt("Play again?");
+                if (choice == no){
+                    playAgain = false;
+                }
+            }
+            
+        </script>
+    </body>
+</html>
