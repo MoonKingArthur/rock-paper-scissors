@@ -4,7 +4,7 @@
         <title>Rock Paper Scissors Game</title>
     </head>
     <body>
-        <h1>Let the games begin!</h1>
+        <h1>Refresh to play again!</h1>
         <script>
             function computerPlay(){
                 //random integer 0 - 2
@@ -63,13 +63,16 @@
                 }
             }
 
+            playRound();
             //keep playing rounds forever
             let playAgain = true;
             while (playAgain == true){
-                playRound();
                 let choice = prompt("Play again?");
-                if (choice == no){
+                if (choice.toLowerCase() == "no"){
                     playAgain = false;
+                }
+                else{
+                    playRound();
                 }
             }
             
